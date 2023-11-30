@@ -55,8 +55,10 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
-    - uses: actions/upload-artifact@v3
+    - uses: actions/download-artifact@v3
       with:
         name: aseprite
-        path: path/to/artifact/
+    
+    - name: Display structure of downloaded files
+      run: ls -R
     
