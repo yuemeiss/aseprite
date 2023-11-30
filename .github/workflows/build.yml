@@ -55,6 +55,10 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
-    - name: Display structure of downloaded files
-      run: ls -R
+    - uses: actions/upload-artifact@v3
+      with:
+        name: aseprite
+        path: |
+          ./build/bin/data
+          ./build/bin/aseprite
     
